@@ -1,0 +1,13 @@
+services:
+  nextjs-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nextjs-container
+    ports:
+      - "3003:3000"
+    # volumes:
+      # Hanya aktifkan untuk development (hot reload)
+      # - ./app:/app
+    environment:
+      - NODE_ENV=production
